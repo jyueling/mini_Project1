@@ -38,5 +38,5 @@ for image in os.listdir('./'):
 			a+=20
 		draw = ImageDraw.Draw(img)
 		
-		img.save('image_%d.jpg'%d)
+		img.save('/media/sf_602/601/pic/'+image)
 		d+=1
