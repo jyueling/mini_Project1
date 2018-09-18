@@ -24,19 +24,30 @@ while (True):
                                 include_rts=False,
                                 exclude_replies=True,
                                 max_id=last_id-1)
-# There are no more tweets
     if (len(more_tweets) == 0):
           break
     else:
           last_id = more_tweets[-1].id-1
           tweets = tweets + more_tweets
-         
+    #load 200 images
+    if (len(tweets) >= 20):
+        break
+    
 media_files = set()
 for status in tweets:
     media = status.entities.get('media', [])
     if(len(media) > 0):
         media_files.add(media[0]['media_url'])
         
-
+#download all images
 for media_file in media_files:
     wget.download(media_file)
+
+#rename the images to 'img_%d.jpg'
+images=glob('*.jpg')
+d=0
+for fname in images:
+    filename="img_%d.jpg"%d
+    
+    d+=1
+    rename(fname,filename) 
