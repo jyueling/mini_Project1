@@ -1,6 +1,5 @@
 import tweepy
 from tweepy import OAuthHandler
-import json
 import wget
  
 consumer_key = 'Enter the consumer_key'
