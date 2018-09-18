@@ -28,7 +28,7 @@ while (True):
     else:
           last_id = more_tweets[-1].id-1
           tweets = tweets + more_tweets
-    #load 200 images
+    #load certain number of images, if need to download all, command these two lines
     if (len(tweets) >= 20):
         break
     
