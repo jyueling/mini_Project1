@@ -1,6 +1,7 @@
 import tweepy
 from tweepy import OAuthHandler
 import wget
+from glob import glob
  
 consumer_key = 'Enter the consumer_key'
 consumer_secret = 'Enter the consumer_secret'
