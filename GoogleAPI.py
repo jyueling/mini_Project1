@@ -13,12 +13,12 @@ import tweepyAPI
 import pymongo
 
 inputname,db,d = tweepyAPI.get_tweet()
-
+#connect to MongoDB database
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 mgdb = client["proj3"]
 tableid = mgdb["tweetid"]
 table_label = mgdb["img_label"]
-
+#input image numbers and twitterID to MongoDB database
 data1 = {'tweetID':inputname,'img_num':d}
 tableid.insert(data1)
 
