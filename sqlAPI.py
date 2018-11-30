@@ -22,7 +22,7 @@ def searchtweet():
         print("No one has this label")
 
 def AnalyseTweet():
-    db = pymysql.connect("localhost","root", "19960120","proj");
+    db = pymysql.connect("localhost","root", password,"proj");
     cursor = db.cursor()
     sql = 'SELECT labels,count(*) FROM img GROUP BY labels order by count(*) desc limit 5'
     
